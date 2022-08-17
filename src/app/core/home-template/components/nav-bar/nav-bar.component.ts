@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {TranslateService} from '@ngx-translate/core';
+import {OAuthService} from "angular-oauth2-oidc";
 
 
 @Component({
@@ -13,6 +14,7 @@ export class NavBarComponent implements OnInit {
   selectedLanguage: string;
 
   constructor(private router: Router,
+              private oAuthService: OAuthService,
               private translateService: TranslateService) {
     this.selectedLanguage = "fr";
   }
@@ -28,4 +30,8 @@ export class NavBarComponent implements OnInit {
     this.translateService.use(lang);
   }
 
+  logout() {
+    this.oAuthService.logOut();
+
+  }
 }
