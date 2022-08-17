@@ -1,0 +1,16 @@
+{
+  "/product-api/*": {
+    "target": "http://localhost:9090/api/v1",
+    "secure": false,
+    "pathRewrite": {
+      "^/product-api/": "/"
+    }
+  },
+  "/order-api/*": {
+    "target": "http://localhost:8089/api/v1",
+    "secure": false,
+    "pathRewrite": {
+      "^/order-api/": "/"
+    }
+  }
+}
